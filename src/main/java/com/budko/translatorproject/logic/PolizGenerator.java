@@ -22,6 +22,9 @@ public class PolizGenerator {
         prioritetesTable.put("if",0);
         prioritetesTable.put("{",1);
         prioritetesTable.put("}",1);
+        prioritetesTable.put("do",0);
+        prioritetesTable.put("while",1);
+        prioritetesTable.put("$",1);
         prioritetesTable.put(";",2);
         prioritetesTable.put("(", 3);
         prioritetesTable.put(")", 4);
@@ -74,9 +77,24 @@ public class PolizGenerator {
                         polizLexemes.add(new Lexeme(lexeme.getLineNumber(),":"));
                         stack.pop();
                     }
+                    if (lexeme.getLexemeName().equals("do")) {
+                        stack.push(new Lexeme(lexeme.getLineNumber(),"do"));
+                        Lexeme upl = new Lexeme(lexeme.getLineNumber(),"m[" + labelCounter + "]");
+                        upl.setCommonLexemeName("labelLoop");
+                        stack.push(upl);
+                        Lexeme label = new Lexeme(lexeme.getLineNumber(),"m[" + labelCounter + "]:");
+                        label.setCommonLexemeName("labelLoop");
+                        polizLexemes.add(label);
+                        labelCounter++;
+                    }
                 }
-                if (!(lexeme.getLexemeName().equals(")") || lexeme.getLexemeName().equals("{") || lexeme.getLexemeName().equals("}") || lexeme.getLexemeName().equals(";"))) {
+                if (!(lexeme.getLexemeName().equals(")") || lexeme.getLexemeName().equals("{") || lexeme.getLexemeName().equals("}") || lexeme.getLexemeName().equals(";") || lexeme.getLexemeName().equals("$") || lexeme.getLexemeName().equals("do") ||lexeme.getLexemeName().equals("while"))) {
                     stack.push(lexeme);
+                }
+                if (lexeme.getLexemeName().equals("$") && stack.size() > 0 && stack.peek().getCommonLexemeName() != null && stack.peek().getCommonLexemeName().equals("labelLoop")) {
+                    polizLexemes.add(stack.pop());
+                    polizLexemes.add(new Lexeme(lexeme.getLineNumber(),"УПЛ"));
+                    stack.pop();
                 }
             }
         }
@@ -98,8 +116,11 @@ public class PolizGenerator {
         if (lexeme.getCommonLexemeName() != null && lexeme.getCommonLexemeName().equals("label")) {
             return 1;
         }
+        if (lexeme.getCommonLexemeName() != null && lexeme.getCommonLexemeName().equals("labelLoop")) {
+            return 0;
+        }
         if (priority == null) {
-            throw new IllegalArgumentException("Нет такого ограничителя в таблице");
+            throw new IllegalArgumentException("Нет такого ограничителя в таблице " + lexeme.getLexemeName());
         } else {
             return priority;
         }
