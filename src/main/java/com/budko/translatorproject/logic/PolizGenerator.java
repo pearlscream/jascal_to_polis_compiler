@@ -1,6 +1,7 @@
 package com.budko.translatorproject.logic;
 
 import com.budko.translatorproject.entities.Lexeme;
+import com.budko.translatorproject.entities.PolizEntity;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -11,8 +12,10 @@ import java.util.stream.Collectors;
 public class PolizGenerator {
     private List<Lexeme> lexemes;
     private Map<String, Integer> prioritetesTable;
+    private List<PolizEntity> processList;
 
     public PolizGenerator(List<Lexeme> lexemes) {
+        this.processList = new LinkedList<>();
         this.lexemes = lexemes;
         boolean isFullCode = lexemes.stream()
                 .map(Lexeme::getLexemeName)
@@ -116,12 +119,21 @@ public class PolizGenerator {
                     stack.peek().setCommonLexemeName("labelWhile");
                 }
             }
+            PolizEntity polizEntity = new PolizEntity();
+            polizEntity.setInputLexeme(lexeme.getLexemeName());
+            polizEntity.setStack(polizStringBuilder(stack));
+            polizEntity.setPoliz(polizStringBuilder(polizLexemes));
+            processList.add(polizEntity);
         }
         if (stack.size() > 0) {
             stack.pop();
         }
+        return polizStringBuilder(polizLexemes);
+    }
+
+    private String polizStringBuilder(Collection<Lexeme> lexemes) {
         StringBuilder outputPoliz = new StringBuilder();
-        for (Lexeme lexeme : polizLexemes) {
+        for (Lexeme lexeme : lexemes) {
             outputPoliz.append(lexeme.getLexemeName());
             outputPoliz.append(" ");
         }
@@ -138,5 +150,9 @@ public class PolizGenerator {
         } else {
             return priority;
         }
+    }
+
+    public List<PolizEntity> getProcessList() {
+        return processList;
     }
 }
