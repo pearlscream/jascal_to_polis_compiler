@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf0eb05b-dba0-43d2-bd0b-66c613fc4bfb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/entities/PolizEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/budko/translatorproject/logic/PolizGenerator.class" afterPath="$PROJECT_DIR$/target/classes/com/budko/translatorproject/logic/PolizGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/budko/translatorproject/test/PolizMain.class" afterPath="$PROJECT_DIR$/target/classes/com/budko/translatorproject/test/PolizMain.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/budko/translatorproject/controllers/MainController.class" afterPath="$PROJECT_DIR$/target/classes/com/budko/translatorproject/controllers/MainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/PolizGeneratorTest.class" afterPath="$PROJECT_DIR$/target/test-classes/PolizGeneratorTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/logic/PolizGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/logic/PolizGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/PolizGeneratorTest.java" afterPath="$PROJECT_DIR$/src/test/java/PolizGeneratorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/GUIStart/mainFX.java" afterPath="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/GUIStart/mainFX.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/controllers/MainController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/form.fxml" afterPath="$PROJECT_DIR$/src/main/resources/form.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/form.fxml" afterPath="$PROJECT_DIR$/target/classes/form.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,10 +25,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PolizGeneratorTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PolizGeneratorTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/PolizGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
+            <state relative-caret-position="355">
               <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -36,31 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AscendingEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/entities/AscendingEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constant.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/entities/Constant.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="104">
+              <caret line="58" column="40" lean-forward="true" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -69,8 +50,8 @@
       <file leaf-file-name="PolizGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/logic/PolizGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+            <state relative-caret-position="118">
+              <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
               <folding>
                 <element signature="e#7016#7017#0" expanded="true" />
                 <element signature="e#7050#7051#0" expanded="true" />
@@ -79,11 +60,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="JascalExample.jas" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JascalExample.jas">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grammarTable.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grammarTable.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PolizEntity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/entities/PolizEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="84">
+              <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="30" />
               <folding>
                 <element signature="e#220#221#0" expanded="true" />
                 <element signature="e#254#255#0" expanded="true" />
@@ -115,8 +116,8 @@
       <file leaf-file-name="mainFX.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/GUIStart/mainFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+            <state relative-caret-position="306">
+              <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -138,8 +139,8 @@
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+            <state relative-caret-position="111">
+              <caret line="17" column="44" lean-forward="false" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -161,13 +162,15 @@
       <find>labelLo</find>
       <find>;</find>
       <find>labelCo</find>
-      <find>,</find>
       <find>$</find>
       <find>while</find>
       <find>labelLoop</find>
       <find>УПЛ</find>
       <find>УП</find>
       <find>:</find>
+      <find>вхід</find>
+      <find>,</find>
+      <find>D:</find>
     </findStrings>
     <replaceStrings>
       <replace>do</replace>
@@ -185,13 +188,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/GUIStart/mainFX.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/JascalExample.jas" />
         <option value="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/test/PolizMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/entities/PolizEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/logic/PolizGenerator.java" />
         <option value="$PROJECT_DIR$/src/test/java/PolizGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/JascalExample.jas" />
+        <option value="$PROJECT_DIR$/src/main/resources/form.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/GUIStart/mainFX.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/budko/translatorproject/controllers/MainController.java" />
       </list>
     </option>
   </component>
@@ -534,7 +539,7 @@
       <recent name="D:\labs_6_semestr\sapr\3_rd_lab\translators_poliz\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PolizGeneratorTest">
+  <component name="RunManager" selected="Application.mainFX">
     <configuration default="false" name="PolizGeneratorTest.thirdLoopExpression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="translators_poliz" />
@@ -1078,9 +1083,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.PolizGeneratorTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.PolizGeneratorTest.firstExpression" />
-        <item index="2" class="java.lang.String" itemvalue="Application.mainFX" />
+        <item index="0" class="java.lang.String" itemvalue="Application.mainFX" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.PolizGeneratorTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.PolizGeneratorTest.firstExpression" />
         <item index="3" class="java.lang.String" itemvalue="Application.PolizMain" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.PolizGeneratorTest.thirdLoopExpression" />
       </list>
@@ -1103,7 +1108,7 @@
       <updated>1492471137731</updated>
       <workItem from="1492471144923" duration="2921000" />
       <workItem from="1492510510512" duration="12161000" />
-      <workItem from="1492575777905" duration="8617000" />
+      <workItem from="1492575777905" duration="10977000" />
     </task>
     <task id="LOCAL-00001" summary="Loop added">
       <created>1492531807975</created>
@@ -1126,7 +1131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492582507986</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Process tracking added">
+      <created>1492584433159</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1492584433159</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1162,7 +1174,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23699000" />
+    <option name="totallyTimeSpent" value="26059000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1178,9 +1190,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19969743" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22692889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1191,7 +1203,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42062193" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42062193" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1210,7 +1222,8 @@
     <MESSAGE value="Loop added" />
     <MESSAGE value="Loop optimized" />
     <MESSAGE value="Final algorithm fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final algorithm fixes" />
+    <MESSAGE value="Process tracking added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Process tracking added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1461,14 +1474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JascalExample.jas">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/entities/AscendingEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1485,37 +1490,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/GUIStart/mainFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/expression_example.jas">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/form.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1528,10 +1506,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/PolizGeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/entities/PolizEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        <state relative-caret-position="84">
+          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="30" />
           <folding>
             <element signature="e#220#221#0" expanded="true" />
             <element signature="e#254#255#0" expanded="true" />
@@ -1551,8 +1539,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/logic/PolizGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+        <state relative-caret-position="118">
+          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
           <folding>
             <element signature="e#7016#7017#0" expanded="true" />
             <element signature="e#7050#7051#0" expanded="true" />
@@ -1560,13 +1548,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/PolizGeneratorTest.java">
+    <entry file="file://$PROJECT_DIR$/JascalExample.jas">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammarTable.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/form.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="17" column="44" lean-forward="false" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/GUIStart/mainFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/budko/translatorproject/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="58" column="40" lean-forward="true" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

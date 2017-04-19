@@ -4,6 +4,7 @@ package com.budko.translatorproject.controllers;
 import com.budko.translatorproject.abstraction.DataSource;
 import com.budko.translatorproject.entities.*;
 import com.budko.translatorproject.logic.LexicalAnalyzer;
+import com.budko.translatorproject.logic.PolizGenerator;
 import com.budko.translatorproject.logic.SyntaxAnalyzer;
 import com.budko.translatorproject.logic.SyntaxAnalyzerAscending;
 import com.budko.translatorproject.utils.FileDataSource;
@@ -14,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -69,25 +71,18 @@ public class MainController {
     private TextArea programArea;
     @FXML
     private Text exceptionText;
+    @FXML
+    private TextField polizText;
 
     @FXML
-    private TableView<AscendingEntity> ascTable;
+    private TableView<PolizEntity> polizTable;
     @FXML
-    private TableColumn<AscendingEntity, Integer> ascStep;
+    private TableColumn<PolizEntity, String> polizInput;
     @FXML
-    private TableColumn<AscendingEntity, String> ascStack;
+    private TableColumn<PolizEntity, String> polizStack;
     @FXML
-    private TableColumn<AscendingEntity, String> ascSign;
-    @FXML
-    private TableColumn<AscendingEntity, String> ascInput;
-    @FXML
-    private TableColumn<AscendingEntity, String> poliz;
+    private TableColumn<PolizEntity, String> poliz;
 
-
-    @FXML
-    private void initialize() {
-
-    }
 
     @FXML
     public void startProgram(ActionEvent event) {
@@ -109,10 +104,8 @@ public class MainController {
         constantCodeColumn.setCellValueFactory(new PropertyValueFactory<Constant, Integer>("code"));
         constantNameColumn.setCellValueFactory(new PropertyValueFactory<Constant, String>("value"));
 
-        ascStep.setCellValueFactory(new PropertyValueFactory<>("step"));
-        ascStack.setCellValueFactory(new PropertyValueFactory<>("stack"));
-        ascSign.setCellValueFactory(new PropertyValueFactory<>("sign"));
-        ascInput.setCellValueFactory(new PropertyValueFactory<>("input"));
+        polizInput.setCellValueFactory(new PropertyValueFactory<>("inputLexeme"));
+        polizStack.setCellValueFactory(new PropertyValueFactory<>("stack"));
         poliz.setCellValueFactory(new PropertyValueFactory<>("poliz"));
 
 
@@ -127,35 +120,11 @@ public class MainController {
         constantTableView.setItems(constantsTable);
         lexicalAnalyzer.printOutputLexemeTable();
 
-        ascTable.getItems().clear();
-        try {
-            String grammarPath = "d:\\labs_6_semestr\\sapr\\2nd_lab\\TranslatorProject\\grammarTable.txt";
-            SyntaxAnalyzerAscending syntaxAnalyzerAscending = new SyntaxAnalyzerAscending(lexicalAnalyzer.getOutputLexemeTable(),grammarPath);
-            for (AscendingEntity ascendingEntity : syntaxAnalyzerAscending.getAscendingEntities()) {
-                System.out.println("----------------------------------------------------------------------------");
-                System.out.println("Step = " + ascendingEntity.getStep());
-                System.out.println("Stack = " + ascendingEntity.getStack());
-                System.out.println("Sign = " + ascendingEntity.getSign());
-                System.out.println("Input = " + ascendingEntity.getInput());
-                System.out.println("Poliz = " + ascendingEntity.getPoliz());
-
-            }
-            ObservableList<AscendingEntity> ascendingEntity = FXCollections.observableArrayList(syntaxAnalyzerAscending.getAscendingEntities());
-            ascTable.setItems(ascendingEntity);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-//            System.out.println("Syntax analyzer");
-//            syntaxAnalyzer = new SyntaxAnalyzer(lexicalAnalyzer.getOutputLexemeTable());
-//            syntaxAnalyzer.analyze();
-//            for (Error error : syntaxAnalyzer.getErrors()) {
-//                exceptionText.setText(exceptionText.getText() + "\n" + "  Рядок " + error.getLineNumber()  + " " + error.getText());
-//            }
-//        }
-//        catch (IllegalArgumentException e) {
-//            exceptionText.setText("\n " + e.getMessage());
-//        }
+        polizTable.getItems().clear();
+        PolizGenerator polizGenerator = new PolizGenerator(lexicalAnalyzer.getOutputLexemeTable());
+        polizText.setText(polizGenerator.generatePoliz());
+        ObservableList<PolizEntity> polizProcessList = FXCollections.observableArrayList(polizGenerator.getProcessList());
+        polizTable.setItems(polizProcessList);
     }
 
     @FXML
@@ -167,7 +136,7 @@ public class MainController {
                 new FileChooser.ExtensionFilter("Jascal Files", "*.jas"),
                 new FileChooser.ExtensionFilter("Text Files", "*.txt"),
                 new FileChooser.ExtensionFilter("All Files", "*.*"));
-        fileChooser.setInitialDirectory(new File("d:\\labs_6_semestr\\sapr\\2nd_lab\\TranslatorProject\\"));
+        fileChooser.setInitialDirectory(new File("d:\\labs_6_semestr\\sapr\\3_rd_lab\\translators_poliz\\"));
         File uploadedFile = fileChooser.showOpenDialog(stage);
         DataSource dataSource = new FileDataSource(uploadedFile.getPath());
         programArea.setText(dataSource.getProgramText());

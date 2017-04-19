@@ -25,7 +25,7 @@ public class mainFX extends Application {
         Parent fxmlMain = loader.load();
         MainController controller = loader.getController();
         primaryStage.setTitle("Jascal lexical analyser");
-        primaryStage.setMinHeight(600);
+        primaryStage.setMinHeight(700);
         primaryStage.setMinWidth(1200);
         primaryStage.setScene(new Scene(fxmlMain, 300, 275));
         primaryStage.show();
