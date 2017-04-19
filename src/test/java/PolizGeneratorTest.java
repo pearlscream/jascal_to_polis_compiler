@@ -68,9 +68,27 @@ public class PolizGeneratorTest {
         System.out.println("Your poliz: " + polizGenerator.generatePoliz());
     }
 
+    @Test
+    public void firstLoopExpression() {
+        PolizGenerator polizGenerator = new PolizGenerator(getLexemes("do write(a); while c > d ;"));
+        assertEquals("m[0]:awritecd>m[0]УПЛ",polizGenerator.generatePoliz());
+        System.out.println("Your poliz: " + polizGenerator.generatePoliz());
+    }
 
 
+    @Test
+    public void secondLoopExpression() {
+        PolizGenerator polizGenerator = new PolizGenerator(getLexemes("do if e > m {h = 100;} while c > d ;"));
+        assertEquals("m[0]:em>m[1]УПЛh100=m[1]:cd>m[0]УПЛ",polizGenerator.generatePoliz());
+        System.out.println("Your poliz: " + polizGenerator.generatePoliz());
+    }
 
+    @Test
+    public void thirdLoopExpression() {
+        PolizGenerator polizGenerator = new PolizGenerator(getLexemes("if e > m { do h = 100; while c > d ;}"));
+        assertEquals("em>m[0]УПЛm[0]m[1]:h100=cd>m[1]УПЛ:",polizGenerator.generatePoliz());
+        System.out.println("Your poliz: " + polizGenerator.generatePoliz());
+    }
 
     private List<Lexeme> getLexemes(String expression) {
         LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(expression);

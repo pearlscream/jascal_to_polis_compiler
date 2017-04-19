@@ -1,15 +1,15 @@
 program calculator
-    var int a, step;
-    double result
-begin
-    step=0;
-    do
-        read(a);
-        result=(a/2.5E4)+20;
-        step=step-1;
-    while result<=1000;
-    if step<1000 {
-        write(a);
-    };
-    write(a);
-end
+       var int a, step;
+       double result
+   begin
+       step=0;
+       do
+           read(a);
+           result=(a/2.5E4)+20;
+           step=step-1;
+       while result<=1000;
+       if step<1000 {
+           write(a);
+       };
+       write(a);
+   end

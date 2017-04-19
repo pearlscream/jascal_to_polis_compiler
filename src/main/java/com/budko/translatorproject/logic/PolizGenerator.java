@@ -3,6 +3,7 @@ package com.budko.translatorproject.logic;
 import com.budko.translatorproject.entities.Lexeme;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author dBudko
@@ -10,11 +11,25 @@ import java.util.*;
 public class PolizGenerator {
     private List<Lexeme> lexemes;
     private Map<String, Integer> prioritetesTable;
-    private List<String> labelTable;
 
     public PolizGenerator(List<Lexeme> lexemes) {
         this.lexemes = lexemes;
-        this.labelTable = new LinkedList<>();
+        boolean isFullCode = lexemes.stream()
+                .map(Lexeme::getLexemeName)
+                .collect(Collectors.toList()).contains("begin");
+        if (isFullCode) {
+            boolean isDeclarationBlock = true;
+            List<Lexeme> codeList = new ArrayList<>();
+            for (Lexeme currentLexeme : lexemes) {
+                if (!isDeclarationBlock && !currentLexeme.getLexemeName().equals("end")) {
+                    codeList.add(currentLexeme);
+                }
+                if (currentLexeme.getLexemeName().equals("begin")) {
+                    isDeclarationBlock = false;
+                }
+            }
+            this.lexemes = codeList;
+        }
     }
 
     {
@@ -22,9 +37,9 @@ public class PolizGenerator {
         prioritetesTable.put("if",0);
         prioritetesTable.put("{",1);
         prioritetesTable.put("}",1);
-        prioritetesTable.put("do",0);
-        prioritetesTable.put("while",1);
-        prioritetesTable.put("$",1);
+        prioritetesTable.put("do",1);
+        prioritetesTable.put("while",2);
+        prioritetesTable.put("$",2);
         prioritetesTable.put(";",2);
         prioritetesTable.put("(", 3);
         prioritetesTable.put(")", 4);
@@ -40,6 +55,8 @@ public class PolizGenerator {
         prioritetesTable.put("!=", 9);
         prioritetesTable.put("+", 10);
         prioritetesTable.put("-", 10);
+        prioritetesTable.put("read", 10);
+        prioritetesTable.put("write", 10);
         prioritetesTable.put("*", 11);
         prioritetesTable.put("/", 11);
     }
@@ -80,10 +97,10 @@ public class PolizGenerator {
                     if (lexeme.getLexemeName().equals("do")) {
                         stack.push(new Lexeme(lexeme.getLineNumber(),"do"));
                         Lexeme upl = new Lexeme(lexeme.getLineNumber(),"m[" + labelCounter + "]");
-                        upl.setCommonLexemeName("labelLoop");
+                        upl.setCommonLexemeName("label");
                         stack.push(upl);
                         Lexeme label = new Lexeme(lexeme.getLineNumber(),"m[" + labelCounter + "]:");
-                        label.setCommonLexemeName("labelLoop");
+                        label.setCommonLexemeName("label");
                         polizLexemes.add(label);
                         labelCounter++;
                     }
@@ -91,10 +108,13 @@ public class PolizGenerator {
                 if (!(lexeme.getLexemeName().equals(")") || lexeme.getLexemeName().equals("{") || lexeme.getLexemeName().equals("}") || lexeme.getLexemeName().equals(";") || lexeme.getLexemeName().equals("$") || lexeme.getLexemeName().equals("do") ||lexeme.getLexemeName().equals("while"))) {
                     stack.push(lexeme);
                 }
-                if (lexeme.getLexemeName().equals("$") && stack.size() > 0 && stack.peek().getCommonLexemeName() != null && stack.peek().getCommonLexemeName().equals("labelLoop")) {
+                if (lexeme.getLexemeName().equals(";") && stack.size() > 0 && stack.peek().getCommonLexemeName() != null && stack.peek().getCommonLexemeName().equals("labelWhile")) {
                     polizLexemes.add(stack.pop());
                     polizLexemes.add(new Lexeme(lexeme.getLineNumber(),"УПЛ"));
                     stack.pop();
+                }
+                if (lexeme.getLexemeName().equals("while") && stack.size() > 0 && stack.peek().getCommonLexemeName().equals("label")) {
+                    stack.peek().setCommonLexemeName("labelWhile");
                 }
             }
         }
@@ -113,11 +133,8 @@ public class PolizGenerator {
 
     private Integer getLimiterPriority(Lexeme lexeme) {
         Integer priority = prioritetesTable.get(lexeme.getLexemeName());
-        if (lexeme.getCommonLexemeName() != null && lexeme.getCommonLexemeName().equals("label")) {
+        if (lexeme.getCommonLexemeName() != null && (lexeme.getCommonLexemeName().equals("label") || lexeme.getCommonLexemeName().equals("labelWhile"))) {
             return 1;
-        }
-        if (lexeme.getCommonLexemeName() != null && lexeme.getCommonLexemeName().equals("labelLoop")) {
-            return 0;
         }
         if (priority == null) {
             throw new IllegalArgumentException("Нет такого ограничителя в таблице " + lexeme.getLexemeName());
