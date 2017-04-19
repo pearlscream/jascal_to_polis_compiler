@@ -79,12 +79,9 @@ public class PolizGenerator {
                         stack.pop();
                     }
                     if (lexeme.getLexemeName().equals("{") && stack.peek().getLexemeName().equals("if")) {
-//                        stack.pop();
                         Lexeme upl = new Lexeme(lexeme.getLineNumber(),"m[" + labelCounter + "]УПЛ");
                         upl.setCommonLexemeName("label");
                         polizLexemes.add(upl);
-//                        labelTable.add("m[" + labelCounter + "]");
-//                        polizLexemes.add(new Lexeme(lexeme.getLineNumber(),"УПЛ"));
                         Lexeme stackUPL = new Lexeme(lexeme.getLineNumber(),"m[" + labelCounter + "]");
                         stackUPL.setCommonLexemeName("label");
                         stack.push(stackUPL);
@@ -99,18 +96,20 @@ public class PolizGenerator {
                         Lexeme upl = new Lexeme(lexeme.getLineNumber(),"m[" + labelCounter + "]");
                         upl.setCommonLexemeName("label");
                         stack.push(upl);
-                        Lexeme label = new Lexeme(lexeme.getLineNumber(),"m[" + labelCounter + "]:");
+                        Lexeme label = new Lexeme(lexeme.getLineNumber(),"m[" + labelCounter + "]");
                         label.setCommonLexemeName("label");
                         polizLexemes.add(label);
+                        polizLexemes.add(new Lexeme(lexeme.getLineNumber(),":"));
                         labelCounter++;
                     }
                 }
-                if (!(lexeme.getLexemeName().equals(")") || lexeme.getLexemeName().equals("{") || lexeme.getLexemeName().equals("}") || lexeme.getLexemeName().equals(";") || lexeme.getLexemeName().equals("$") || lexeme.getLexemeName().equals("do") ||lexeme.getLexemeName().equals("while"))) {
+                if (!(lexeme.getLexemeName().equals(")") || lexeme.getLexemeName().equals("{") || lexeme.getLexemeName().equals("}") || lexeme.getLexemeName().equals(";") || lexeme.getLexemeName().equals("do") ||lexeme.getLexemeName().equals("while"))) {
                     stack.push(lexeme);
                 }
                 if (lexeme.getLexemeName().equals(";") && stack.size() > 0 && stack.peek().getCommonLexemeName() != null && stack.peek().getCommonLexemeName().equals("labelWhile")) {
-                    polizLexemes.add(stack.pop());
-                    polizLexemes.add(new Lexeme(lexeme.getLineNumber(),"УПЛ"));
+                    Lexeme stackLexeme = stack.pop();
+                    stackLexeme.setLexemeName(stackLexeme.getLexemeName() + "УП");
+                    polizLexemes.add(stackLexeme);
                     stack.pop();
                 }
                 if (lexeme.getLexemeName().equals("while") && stack.size() > 0 && stack.peek().getCommonLexemeName().equals("label")) {
@@ -118,15 +117,13 @@ public class PolizGenerator {
                 }
             }
         }
-//        while (stack.size() > 0 && !stack.peek().getLexemeName().equals(";")) {
-//            polizLexemes.add(stack.pop());
-//        }
         if (stack.size() > 0) {
             stack.pop();
         }
         StringBuilder outputPoliz = new StringBuilder();
         for (Lexeme lexeme : polizLexemes) {
             outputPoliz.append(lexeme.getLexemeName());
+            outputPoliz.append(" ");
         }
         return outputPoliz.toString();
     }
